@@ -1,0 +1,10 @@
+<div class="dialog">
+  <div class="dialog__title mat-subtitle-1">Удаление строк</div>
+  <div class="dialog__content mat-typography">
+    Удалить выбранные строки ({{ inputData.selectCount }})?
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Отмена</button>
+    <button mat-button mat-flat-button color="primary" (click)="confirmDelete()">Удалить</button>
+  </mat-dialog-actions>
+</div>

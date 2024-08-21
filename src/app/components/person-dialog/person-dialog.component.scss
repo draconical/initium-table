@@ -1,0 +1,20 @@
+:host {
+  .dialog {
+    width: 350px;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    .dialog__title {
+      padding: 0 0 16px 0;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    mat-form-field:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+}

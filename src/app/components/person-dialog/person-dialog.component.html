@@ -1,0 +1,41 @@
+<div class="dialog">
+  <div class="dialog__title mat-subtitle-1"> {{ inputData.type === 'new' ? 'Новый клиент' : 'Редактирование' }}</div>
+  <div class="dialog__content mat-typography">
+    <form class="person__form" [formGroup]="personForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Имя</mat-label>
+        <input type="text" matInput formControlName="firstName">
+
+        <mat-error *ngIf="hasError('firstName', 'required')">Обязательное поле</mat-error>
+        <mat-error *ngIf="hasError('firstName', 'minlength')">Укажите не менее 2 символов</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Фамилия</mat-label>
+        <input type="text" matInput formControlName="lastName">
+
+        <mat-error *ngIf="hasError('lastName', 'required')">Обязательное поле</mat-error>
+        <mat-error *ngIf="hasError('lastName', 'minlength')">Укажите не менее 2 символов</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="email" matInput formControlName="email">
+
+        <mat-error *ngIf="hasError('email', 'required')">Обязательное поле</mat-error>
+        <mat-error *ngIf="hasError('email', 'pattern')">Неверный формат почты</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Телефон</mat-label>
+        <input type="phone" matInput formControlName="phone">
+
+        <mat-error *ngIf="hasError('phone', 'pattern')">Неверный формат номера</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Отмена</button>
+    <button mat-button mat-flat-button color="primary" [disabled]="!personForm.valid" (click)="savePerson()">Сохранить</button>
+  </mat-dialog-actions>
+</div>
