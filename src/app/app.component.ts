@@ -31,7 +31,6 @@ export class AppComponent {
 
   constructor(private personService: PersonService) {
     this._updateData();
-    // window.alert('Я не очень владею настройкой темы Angular Material - он вообще какой-то всратенький в этом плане, как по мне - поэтому решил компенсировать дополнительными пунктами по функционалу. Такие дела.')
   }
 
   private _updateData(): void {
