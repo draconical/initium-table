@@ -58,7 +58,7 @@ export class PersonService {
   addNewPerson(newPerson: IPerson): void {
     // Увы, сервера нет, поэтому id "генерируется" вручную - он нужен для удаления элементов таблицы 
     if (newPerson.id === null) {
-      newPerson.id = this.persons[this.persons.length - 1].id;
+      newPerson.id = this.persons[this.persons.length - 1]?.id ?? 0;
     }
 
     this.persons.push(newPerson);
